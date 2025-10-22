@@ -1,0 +1,8 @@
+{
+  "name": "trusentry-contact-api",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "twilio": "^4.19.0"
+  }
+}
