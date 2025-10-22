@@ -1,4 +1,21 @@
-// api/contact.js (Vercel Serverless Function)
+// aexport default async function handler(req, res) {
+  // ✅ Allow your Carrd site to make the request
+  res.setHeader("Access-Control-Allow-Origin", "https://tru-sentry.com");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // ✅ Handle preflight requests
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+}
+pi/contact.js (Vercel Serverless Function)
 import twilio from "twilio";
 
 // helper: safely read a field by either simple or "contact-*" names
